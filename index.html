@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Fadil | Developer</title>
 
 <style>
@@ -15,56 +16,57 @@ font-family:Arial;
 }
 
 body{
-background:#0b1220;
+background:#020617;
 color:white;
-line-height:1.6;
+overflow-x:hidden;
+}
+
+#particles{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
 }
 
 nav{
 display:flex;
 justify-content:space-between;
 padding:20px;
-background:#020617;
+background:rgba(0,0,0,0.3);
+backdrop-filter:blur(10px);
 }
 
 nav a{
-color:#cbd5f5;
-text-decoration:none;
+color:white;
 margin-left:15px;
+text-decoration:none;
 }
 
 .hero{
 text-align:center;
-padding:80px 20px;
+padding:100px 20px;
 }
 
 .hero img{
-width:140px;
-height:140px;
+width:150px;
 border-radius:50%;
 border:4px solid #38bdf8;
 }
 
 .hero h1{
-font-size:40px;
+font-size:45px;
 margin-top:20px;
 }
 
-.typing{
-color:#38bdf8;
-font-weight:bold;
+.subtitle{
+color:#94a3b8;
+margin-top:10px;
 }
 
 .container{
 max-width:1000px;
 margin:auto;
-padding:50px 20px;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:30px;
-font-size:30px;
+padding:60px 20px;
 }
 
 .skills{
@@ -73,49 +75,29 @@ grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
 gap:20px;
 }
 
-.skill{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
+.card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+padding:25px;
+border-radius:12px;
 text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+background:rgba(255,255,255,0.08);
 }
 
 .projects{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+gap:25px;
 }
 
-.project{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-}
-
-.project a{
+.btn{
 display:inline-block;
 margin-top:10px;
-padding:8px 15px;
-background:#38bdf8;
-color:black;
-text-decoration:none;
-border-radius:6px;
-}
-
-.about{
-text-align:center;
-max-width:700px;
-margin:auto;
-color:#94a3b8;
-}
-
-.contact{
-text-align:center;
-}
-
-.contact a{
-display:inline-block;
-margin:10px;
 padding:10px 18px;
 background:#38bdf8;
 color:black;
@@ -134,14 +116,16 @@ color:#64748b;
 
 <body>
 
+<canvas id="particles"></canvas>
+
 <nav>
+
 <div><b>FadilDev</b></div>
 
 <div>
 <a href="#">Home</a>
 <a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
 </div>
 
 </nav>
@@ -152,34 +136,26 @@ color:#64748b;
 
 <h1>Halo, saya Fadil 👋</h1>
 
-<p class="typing" id="typing"></p>
+<p class="subtitle">
+Web Developer | Python Learner | Tech Enthusiast
+</p>
 
 </section>
 
 <div class="container">
 
-<h2 class="section-title">About Me</h2>
+<h2 id="skills">Skills</h2>
 
-<p class="about">
-Saya seorang pelajar yang sedang belajar menjadi Web Developer.
-Saya suka membangun website, belajar teknologi baru,
-dan mengembangkan project menggunakan Python dan Web.
-</p>
-
-</div>
-
-<div class="container">
-
-<h2 id="skills" class="section-title">Skills</h2>
+<br>
 
 <div class="skills">
 
-<div class="skill">Python</div>
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">Flask</div>
-<div class="skill">Git</div>
-<div class="skill">Linux</div>
+<div class="card">Python</div>
+<div class="card">HTML</div>
+<div class="card">CSS</div>
+<div class="card">Flask</div>
+<div class="card">Git</div>
+<div class="card">Linux</div>
 
 </div>
 
@@ -187,31 +163,33 @@ dan mengembangkan project menggunakan Python dan Web.
 
 <div class="container">
 
-<h2 id="projects" class="section-title">Projects</h2>
+<h2 id="projects">Projects</h2>
+
+<br>
 
 <div class="projects">
 
-<div class="project">
+<div class="card">
+
 <h3>Portfolio Website</h3>
-<p>Website portfolio pribadi menggunakan HTML dan CSS.</p>
-<a href="https://github.com/fadilirfandikendari-maker">GitHub</a>
+
+<p>Website portfolio menggunakan HTML & CSS</p>
+
+<a class="btn" href="https://github.com/fadilirfandikendari-maker">GitHub</a>
+
 </div>
 
-<div class="project">
+<div class="card">
+
 <h3>Python Bot</h3>
-<p>Bot sederhana yang dibuat menggunakan Python.</p>
-<a href="https://github.com/fadilirfandikendari-maker">Project</a>
-</div>
+
+<p>Bot sederhana menggunakan Python</p>
+
+<a class="btn" href="https://github.com/fadilirfandikendari-maker">Project</a>
 
 </div>
 
 </div>
-
-<div class="container contact" id="contact">
-
-<h2 class="section-title">Contact</h2>
-
-<a href="https://github.com/fadilirfandikendari-maker">GitHub</a>
 
 </div>
 
@@ -223,25 +201,53 @@ dan mengembangkan project menggunakan Python dan Web.
 
 <script>
 
-const text="Web Developer | Python Learner | Tech Enthusiast";
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
 
-let i=0;
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
 
-function typing(){
+let particles=[];
 
-if(i<text.length){
+for(let i=0;i<80;i++){
 
-document.getElementById("typing").innerHTML+=text.charAt(i);
+particles.push({
 
-i++;
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2
 
-setTimeout(typing,80);
+});
 
 }
 
+function draw(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="#38bdf8";
+
+particles.forEach(p=>{
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fill();
+
+p.y+=0.3;
+
+if(p.y>canvas.height){
+
+p.y=0;
+
 }
 
-typing();
+});
+
+requestAnimationFrame(draw);
+
+}
+
+draw();
 
 </script>
 
