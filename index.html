@@ -15,10 +15,6 @@ box-sizing:border-box;
 font-family:Arial;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 background:#020617;
 color:white;
@@ -33,38 +29,18 @@ z-index:-1;
 }
 
 nav{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-
 display:flex;
 justify-content:space-between;
-align-items:center;
-
-padding:15px 30px;
+padding:20px;
 background:rgba(0,0,0,0.3);
 backdrop-filter:blur(10px);
-z-index:10;
-}
-
-nav b{
-font-size:20px;
-}
-
-nav a:hover{
-color:#38bdf8;
 }
 
 nav a{
 color:white;
+margin-left:15px;
 text-decoration:none;
-margin-left:20px;
-font-weight:500;
 }
-
-</style>
-
 
 .hero{
 text-align:center;
@@ -120,18 +96,13 @@ gap:25px;
 }
 
 .btn{
-  display:inline-block;
-  padding:10px 18px;
-  background:#38bdf8;
-  color:black;
-  border-radius:8px;
-  text-decoration:none;
-  transition:0.3s;
-}
-
-.btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 15px #38bdf8;
+display:inline-block;
+margin-top:10px;
+padding:10px 18px;
+background:#38bdf8;
+color:black;
+text-decoration:none;
+border-radius:8px;
 }
 
 footer{
@@ -141,11 +112,6 @@ color:#64748b;
 }
 
 </style>
-
-html{
-  scroll-behavior:smooth;
-}
-
 </head>
 
 <body>
@@ -166,27 +132,21 @@ html{
 
 <section class="hero">
 
+<img src="https://i.imgur.com/2DhmtJ4.png">
+
 <h1>Halo, saya Fadil 👋</h1>
 
 <p class="subtitle">
-<span id="typing"></span>
+Web Developer | Python Learner | Tech Enthusiast
 </p>
-
-<br>
-
-<a class="btn" href="cv-fadil.pdf" download>
-Download CV
-</a>
-
-<br><br>
-
-<img src="https://i.imgur.com/2DhmtJ4.png" width="160" />
 
 </section>
 
 <div class="container">
 
 <h2 id="skills">Skills</h2>
+
+<br>
 
 <div class="skills">
 
@@ -196,7 +156,7 @@ Download CV
 <div class="card">Flask</div>
 <div class="card">Git</div>
 <div class="card">Linux</div>
-<div class="card reveal">Python</div>
+
 </div>
 
 </div>
@@ -225,9 +185,7 @@ Download CV
 
 <p>Bot sederhana menggunakan Python</p>
 
-<a class="btn" href="https://github.com/fadilirfandikendari-maker">
-View Code
-</a>
+<a class="btn" href="https://github.com/fadilirfandikendari-maker">Project</a>
 
 </div>
 
@@ -291,24 +249,7 @@ requestAnimationFrame(draw);
 
 draw();
 
-
-<script>
-
-function reveal(){
-let reveals=document.querySelectorAll(".reveal");
-
-for(let i=0;i<reveals.length;i++){
-let windowHeight=window.innerHeight;
-let elementTop=reveals[i].getBoundingClientRect().top;
-let elementVisible=100;
-
-if(elementTop<windowHeight-elementVisible){
-reveals[i].classList.add("active");
-}
-}
-}
-
-window.addEventListener("scroll",reveal);
 </script>
+
 </body>
 </html>
